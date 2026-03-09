@@ -1,5 +1,5 @@
 /* ===================================================
-  CSS CUSTOM PROPERTIES（カラー変数）
+   CSS CUSTOM PROPERTIES（カラー変数）
 =================================================== */
 :root {
   --peach:     #FF8C69;
@@ -20,7 +20,7 @@
 }
 
 /* ===================================================
-  RESET & BASE
+   RESET & BASE
 =================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -340,7 +340,7 @@ img { display: block; max-width: 100%; }
 .news-list { display: grid; gap: 0; }
 
 .news-item {
-  display: flex; align-items: baseline; gap: 1.2rem;
+  display: flex; align-items: center; gap: 1.2rem;
   padding: 0.85rem 0.5rem;
   border-bottom: 1px solid var(--border);
   transition: background 0.15s;
@@ -351,19 +351,24 @@ img { display: block; max-width: 100%; }
 
 .news-date {
   font-size: 0.75rem; font-weight: 700;
-  color: var(--text-lt); white-space: nowrap; min-width: 80px;
+  color: var(--text-lt); white-space: nowrap;
+  width: 90px; flex-shrink: 0;
 }
 
 .news-tag {
   background: var(--peach-bg); color: var(--peach);
-  padding: 0.15rem 0.6rem; border-radius: 100px;
-  font-size: 0.68rem; font-weight: 800; white-space: nowrap;
+  padding: 0.2rem 0; border-radius: 100px;
+  font-size: 0.68rem; font-weight: 800;
+  white-space: nowrap;
+  width: 72px; flex-shrink: 0;
+  text-align: center;
+  display: inline-block;
 }
 
 .news-tag.oc      { background: var(--mint-bg); color: var(--mint); }
 .news-tag.nyuushi { background: #FFF8E1; color: #E8A020; }
 
-.news-text { font-size: 0.85rem; color: var(--text); transition: color 0.15s; }
+.news-text { font-size: 0.85rem; color: var(--text); transition: color 0.15s; flex: 1; }
 .news-item:hover .news-text { color: var(--peach); }
 
 /* ===================================================
@@ -372,7 +377,7 @@ img { display: block; max-width: 100%; }
 #oc { background: var(--peach-bg); }
 
 .oc-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
 }
 
 .oc-card {
@@ -672,11 +677,11 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .oc-grid        { grid-template-columns: 1fr 1fr; }
+  .oc-grid        { grid-template-columns: repeat(1, 1fr); }
   .course-grid    { grid-template-columns: 1fr; }
-  .campus-grid    { grid-template-columns: repeat(2, 1fr); }
+  .campus-grid    { grid-template-columns: repeat(1, 1fr); }
   .other-grid     { grid-template-columns: 1fr; }
   .ft-top         { grid-template-columns: 1fr; }
-  .career-nums    { grid-template-columns: 1fr 1fr; }
+  .career-nums    { grid-template-columns: 1fr; }
   .header-topbar  { display: none; }
 }
