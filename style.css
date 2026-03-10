@@ -25,7 +25,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+  font-family: "Zen Maru Gothic",'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
   background: var(--white);
   color: var(--text);
   overflow-x: hidden;
@@ -86,7 +86,7 @@ img { display: block; max-width: 100%; }
 .gnav > li > a {
   display: flex; align-items: center; gap: 0.25rem;
   padding: 0.6rem 0.9rem;
-  font-size: 0.9rem; 
+  font-size: 1rem; 
   font-weight: 700;
   color: var(--text); transition: color 0.15s; white-space: nowrap;
 }
