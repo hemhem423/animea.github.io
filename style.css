@@ -139,7 +139,6 @@ img { display: block; max-width: 100%; }
 
   .gnav { flex-direction: column; gap: 0; }
   .gnav > li > a {
-    font-size: 1rem;
     padding: 0.9rem 0.5rem;
     border-bottom: 1px solid var(--border);
     justify-content: space-between;
@@ -301,12 +300,12 @@ img { display: block; max-width: 100%; }
   align-items: center;
   max-width: 1400px; 
   margin: 0 auto;
-  padding:0 4rem; 
+  padding:0 2rem; 
   width: 100%;
 }
 
 .hero-text { 
-  width: 60%;
+  width: 65%;
   flex: 1; }
 
 .hero-catch-en {
@@ -824,7 +823,7 @@ img { display: block; max-width: 100%; }
 }
 
   .campus-btn-icon img{
-        border-radius: 1.2rem;
+        border-radius: 1.2rem 1.2rem 0 0;
   }
 .campus-btn-en   { 
   font-size: 0.8rem; 
@@ -890,7 +889,8 @@ footer {
   justify-content: center;
 }
 
-.ft-logo-name { font-size: 1.4rem; font-weight: 900; color: var(--peach); letter-spacing: 0.05em; }
+.ft-logo-name { 
+  font-size: 2rem; font-weight: 900; color: var(--peach); letter-spacing: 0.05em; }
 
 .ft-address { 
   font-size: 0.9rem; 
