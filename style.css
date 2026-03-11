@@ -385,7 +385,7 @@ img { display: block; max-width: 100%; }
 
 /* hero visual */
 .hero-visual {
-  width: 40%;
+  width: 35%;
   flex-shrink: 0;
   position: relative;
   padding-bottom: 2rem;
@@ -890,7 +890,10 @@ footer {
 }
 
 .ft-logo-name { 
-  font-size: 2rem; font-weight: 900; color: var(--peach); letter-spacing: 0.05em; }
+  font-size: 2rem; 
+  font-weight: 900; 
+  color: var(--peach); 
+  letter-spacing: 0.05em; }
 
 .ft-address { 
   font-size: 0.9rem; 
