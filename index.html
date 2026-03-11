@@ -109,16 +109,16 @@
         <div class="hero-text">
           <div class="hero-stats">
             <div class="h-stat">
-              <div class="h-stat-l">就職内定率</div>
               <div class="h-stat-n">98%</div>
+              <div class="h-stat-l">就職内定率</div>
             </div>
             <div class="h-stat">
-              <div class="h-stat-l">提携動物病院</div>
               <div class="h-stat-n">100+</div>
+              <div class="h-stat-l">提携動物病院</div>
             </div>
             <div class="h-stat">
-              <div class="h-stat-l">国試合格率（25年の実績）</div>
               <div class="h-stat-n">No.1</div>
+              <div class="h-stat-l">国試合格率<br />（25年の実績）</div>
             </div>
           </div>
           <h1 class="hero-title">
@@ -130,8 +130,27 @@
 
         <!-- ビジュアル -->
         <div class="hero-visual">
-          <div class="hero-img">
-            <img src="image/nursing.jpg" alt="" />
+          <div class="hero-img" id="heroSlider">
+            <div class="hero-slide active">
+              <div class="hero-slide-placeholder slide-bg-1">
+                <img src="image/nursing.jpg" alt="" />
+              </div>
+            </div>
+            <div class="hero-slide">
+              <div class="hero-slide-placeholder slide-bg-2">
+                <img src="image/nursing.jpg" alt="" />
+              </div>
+            </div>
+            <div class="hero-slide">
+              <div class="hero-slide-placeholder slide-bg-2">
+                <img src="image/nursing.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="hero-dots" id="heroDots">
+            <button class="hero-dot active" data-index="0"></button>
+            <button class="hero-dot" data-index="1"></button>
+            <button class="hero-dot" data-index="2"></button>
           </div>
         </div>
       </div>

@@ -62,8 +62,50 @@ const activeObserver = new IntersectionObserver(
 sections.forEach((section) => activeObserver.observe(section));
 
 // ===================================================
-// ハンバーガーメニュー（モバイル対応 — 将来の拡張用）
+// ヒーロー スライドショー
 // ===================================================
+(function () {
+  const slides = document.querySelectorAll('#heroSlider .hero-slide');
+  const dots   = document.querySelectorAll('#heroDots .hero-dot');
+  let current  = 0;
+  let timer    = null;
+  const INTERVAL = 4000; // 切り替え間隔（ms）
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function startAuto() {
+    timer = setInterval(() => goTo(current + 1), INTERVAL);
+  }
+
+  function stopAuto() {
+    clearInterval(timer);
+  }
+
+  // ドットクリックで手動切り替え
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      stopAuto();
+      goTo(Number(dot.dataset.index));
+      startAuto(); // 手動操作後もオートを再開
+    });
+  });
+
+  // マウスホバー中はオートを停止
+  const slider = document.getElementById('heroSlider');
+  if (slider) {
+    slider.addEventListener('mouseenter', stopAuto);
+    slider.addEventListener('mouseleave', startAuto);
+  }
+
+  // 自動開始
+  if (slides.length > 1) startAuto();
+})();
 // 必要に応じて、以下のコードでモバイルメニューを実装できます。
 // const hamburger = document.querySelector('.hamburger');
 // const mobileNav = document.querySelector('.mobile-nav');
