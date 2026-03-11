@@ -110,6 +110,7 @@ img { display: block; max-width: 100%; }
 
 /* ドロワー */
 @media (max-width: 1200px) {
+  .gnav          { display: none; }
   .gnav-wrap {
     position: fixed;
     top: 0; right: 0;
@@ -117,19 +118,19 @@ img { display: block; max-width: 100%; }
     height: 100dvh;
     background: white;
     box-shadow: -4px 0 24px rgba(61, 43, 31, 0.12);
-    z-index: 240;
     overflow-y: auto;
     padding: 5rem 1.5rem 2rem;
     transform: translateX(100%);
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .gnav-wrap.open { transform: translateX(0); }
+  .gnav-wrap.open { 
+    transform: translateX(0); }
 
   .gnav-overlay {
     position: fixed;
     inset: 0;
     background: rgba(61, 43, 31, 0.35);
-    z-index: 230;
+    z-index: 100;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s;
@@ -143,6 +144,8 @@ img { display: block; max-width: 100%; }
     border-bottom: 1px solid var(--border);
     justify-content: space-between;
   }
+  
+
 
   /* ドロップダウン → アコーディオン */
   .dropdown {
@@ -169,7 +172,7 @@ img { display: block; max-width: 100%; }
 
   .hamburger { display: flex; }
   .header-ctas { display: none; }
-  .header-main { padding: 0.7rem 1.5rem; }
+  .header-main { padding: 1rem 1.5rem; }
   /* 以降の既存レスポンシブ設定も 1024px → 1200px に変更 */
 }
 /* global nav */
@@ -303,7 +306,7 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-text { 
-  width: 65%;
+  width: 60%;
   flex: 1; }
 
 .hero-catch-en {
@@ -383,7 +386,7 @@ img { display: block; max-width: 100%; }
 
 /* hero visual */
 .hero-visual {
-  width: 38%;
+  width: 40%;
   flex-shrink: 0;
   position: relative;
   padding-bottom: 2rem;
@@ -804,7 +807,7 @@ img { display: block; max-width: 100%; }
 
 .campus-btn {
   background: white; border-radius: 1.2rem;
-  padding: 1.8rem 1.2rem 1.4rem;
+  padding-bottom: 1.4rem;
   border: 1.5px solid var(--border); text-align: center;
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   cursor: pointer;
@@ -817,7 +820,12 @@ img { display: block; max-width: 100%; }
 }
 
 .campus-btn-icon { 
-  font-size: 2.5rem; margin-bottom: 0.7rem; }
+  font-size: 2.5rem; margin-bottom: 0.7rem; 
+}
+
+  .campus-btn-icon img{
+        border-radius: 1.2rem;
+  }
 .campus-btn-en   { 
   font-size: 0.8rem; 
   font-weight: 800; letter-spacing: 0.12em; 
@@ -947,7 +955,6 @@ footer {
    RESPONSIVE
 =================================================== */
 @media (max-width: 1024px) {
-  .gnav          { display: none; }
   .header-main   { padding: 0.7rem 1.5rem; }
   .hero-inner    { flex-direction: column; padding: 0 1rem; }
   .hero-visual   { display: none; }
