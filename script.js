@@ -61,6 +61,54 @@ const activeObserver = new IntersectionObserver(
 
 sections.forEach((section) => activeObserver.observe(section));
 
+(function () {
+  const hamburger = document.getElementById('hamburger');
+  const gnavWrap  = document.getElementById('gnavWrap');
+  if (!hamburger || !gnavWrap) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'gnav-overlay';
+  document.body.appendChild(overlay);
+
+  function openMenu() {
+    hamburger.classList.add('open');
+    gnavWrap.classList.add('open');
+    overlay.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    gnavWrap.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  overlay.addEventListener('click', closeMenu);
+
+  // アコーディオン（モバイル時のみ）
+  document.querySelectorAll('.gnav > li > a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth > 1200) return;
+      const li = link.closest('li');
+      if (!li.querySelector('.dropdown')) return;
+      e.preventDefault();
+      document.querySelectorAll('.gnav > li.open').forEach((openLi) => {
+        if (openLi !== li) openLi.classList.remove('open');
+      });
+      li.classList.toggle('open');
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1200) closeMenu();
+  });
+})();
 // ===================================================
 // ヒーロー スライドショー
 // ===================================================
