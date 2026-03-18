@@ -296,8 +296,7 @@ img { display: block; max-width: 100%; }
 
 .hero-inner {
   position: relative; 
-  z-index: 2;
-  display: flex; 
+  z-index: 2; 
   align-items: center;
   max-width: 1400px; 
   margin: 0 auto;
@@ -308,7 +307,30 @@ img { display: block; max-width: 100%; }
 .hero-text { 
   width: 65%;
   flex: 1; }
+@media screen and(max-width: 1024px) {
+  .hero-text { 
+    width: 100%;
+}}
+.hero-en-catch {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.95;
+  margin-bottom: 1.2rem;
+}
 
+.hero-en-catch span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  display: block;
+}
+
+.hero-en-accent {
+  color: transparent !important;
+  -webkit-text-stroke: 2px var(--peach);
+}
 .hero-catch-en {
   font-size: 0.72rem; font-weight: 800;
   color: var(--peach); letter-spacing: 0.2em; margin-bottom: 0.6rem;
@@ -386,12 +408,17 @@ img { display: block; max-width: 100%; }
 
 /* hero visual */
 .hero-visual {
-  width: 35%;
+  width: 45%;
   flex-shrink: 0;
-  position: relative;
+  position: absolute;
+  top: -200px;
+  right: 0;
   padding-bottom: 2rem;
 }
-
+@media screen and(max-width: 1024px) {
+  .hero-visual { 
+    width: 100%;
+}}
 .hero-img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -549,7 +576,7 @@ img { display: block; max-width: 100%; }
   border-top: 1px solid var(--border); }
 
 .news-date {
-  font-size: 0.8rem; 
+  font-size: 0.9rem; 
   font-weight: 700;
   color: var(--text-lt); white-space: nowrap;
   width: 90px; flex-shrink: 0;
@@ -754,7 +781,8 @@ img { display: block; max-width: 100%; }
 
 .career-nums { 
   display: flex; 
-  gap: 1rem; }
+  gap: 1rem;
+  margin-bottom: 40px; }
 
 .cnum-card {
   width: 33%;
@@ -813,14 +841,19 @@ img { display: block; max-width: 100%; }
    キャンパスライフ ナビバナー
 =================================================== */
 #campus-links { background: var(--cream); }
-
+#campus-links.container{
+  background: #fff;
+  border-radius: 2rem; 
+}
+.sec-head.campus .sec-head-left{
+  text-align: center;
+}
 .campus-grid { 
   display: grid; 
   grid-template-columns: repeat(3, 1fr); 
   gap: 1rem;
-  background: #fff;
   padding: 2rem;
-border-radius: 2rem; }
+}
 
 .campus-btn {
   text-align: center;
