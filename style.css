@@ -284,7 +284,7 @@ img { display: block; max-width: 100%; }
   position: absolute; 
   font-size: 32rem;
   left: 0; 
-  top: 80px;
+  top: -70px;
   opacity: 0.05; pointer-events: none;
   animation: drift 12s ease-in-out infinite; line-height: 1;
 }
@@ -789,7 +789,7 @@ img { display: block; max-width: 100%; }
   animation: blob-morph 8s ease-in-out infinite;
   box-shadow: 0 12px 40px rgba(255, 140, 105, 0.28), 0 4px 16px rgba(255, 140, 105, 0.14);
   background: var(--peach-bg); border-radius: 1.3rem;
-  padding: 4rem 0; 
+  padding: 5rem 0; 
   border: 2px solid var(--peach-lt);
   text-align: center; 
   transition: transform 0.2s;
@@ -845,6 +845,9 @@ img { display: block; max-width: 100%; }
   background: #fff;
   border-radius: 2rem; 
 }
+.sec-head.campus{
+  display: block;
+}
 .sec-head.campus .sec-head-left{
   text-align: center;
 }
@@ -869,10 +872,11 @@ img { display: block; max-width: 100%; }
 
 .campus-btn-icon { 
   font-size: 2.5rem; margin-bottom: 0.7rem; 
+  animation: blob-morph 8s ease-in-out infinite;
 }
 
   .campus-btn-icon img{
-        border-radius: 1.2rem 1.2rem 0 0;
+  border-radius: 1.2rem 1.2rem 0 0;
   }
 .campus-btn-en   { 
   font-size: 0.8rem; 
