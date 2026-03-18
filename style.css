@@ -792,11 +792,8 @@ img { display: block; max-width: 100%; }
   padding: 5rem 0; 
   border: 2px solid var(--peach-lt);
   text-align: center; 
-  transition: transform 0.2s;
 }
 
-.cnum-card:hover { 
-  transform: translateY(-3px); }
 .cnum-card.g { 
   background: var(--mint-bg); border-color: var(--mint-lt); }
 
@@ -840,12 +837,13 @@ img { display: block; max-width: 100%; }
 /* ===================================================
    キャンパスライフ ナビバナー
 =================================================== */
-#campus-links.container{
+#campus-links .container{
   background: var(--cream);
   border-radius: 2rem; 
 }
 .sec-head.campus{
   display: block;
+  border-bottom: none;
 }
 .sec-head.campus .sec-head-left{
   text-align: center;
