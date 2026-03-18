@@ -780,13 +780,13 @@ img { display: block; max-width: 100%; }
 }
 
 .career-nums { 
-  display: flex; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
   gap: 1rem;
   margin-bottom: 40px; }
 
 .cnum-card {
-  width: 33%;
-  animation: blob-morph 8s ease-in-out infinite;
+  animation: blob-morph 20s ease-in-out infinite;
   box-shadow: 0 12px 40px rgba(255, 140, 105, 0.28), 0 4px 16px rgba(255, 140, 105, 0.14);
   background: var(--peach-bg); border-radius: 1.3rem;
   padding: 5rem 0; 
@@ -795,6 +795,7 @@ img { display: block; max-width: 100%; }
 }
 
 .cnum-card.g { 
+  animation: blob-morph 15s ease-in-out infinite;
   background: var(--mint-bg); border-color: var(--mint-lt); }
 
 .cnum-n { 
@@ -862,6 +863,7 @@ img { display: block; max-width: 100%; }
 }
 
 .campus-btn:hover {
+
   transform: translateY(-4px);
   border-color: var(--peach-lt);
 }
@@ -871,7 +873,8 @@ img { display: block; max-width: 100%; }
 }
 
   .campus-btn-icon img{
-  animation: blob-morph 8s ease-in-out infinite;
+  animation: blob-morph 50s ease-in-out infinite;
+  height: 300px;
   }
 .campus-btn-en   { 
   font-size: 0.8rem; 
@@ -912,7 +915,7 @@ footer {
 }
 
 .ft-logo-name { 
-  font-size: 2rem; 
+  font-size: 3rem; 
   font-weight: 900; 
   color: var(--peach); 
   letter-spacing: 0.05em; }
@@ -924,6 +927,7 @@ footer {
 
 .ft-col-title {
   font-size: 1.3rem; 
+  margin-bottom: 20px;
   font-weight: 800;
   letter-spacing: 0.12em; 
   color: var(--peach);
