@@ -417,7 +417,8 @@ img { display: block; max-width: 100%; }
 }
 @media screen and(max-width: 1024px) {
   .hero-visual { 
-    width: 100%;
+    width: 80%;
+    top: -170px;
 }}
 .hero-img {
   width: 100%;
@@ -486,7 +487,7 @@ img { display: block; max-width: 100%; }
   border-radius: 50%;
   background: var(--peach-lt);
   border: none; cursor: pointer; padding: 0;
-  transition: background 0.3s, transform 0.3s;
+  transition: 0.3s, transform 0.3s;
 }
 
 .hero-dot.active {
@@ -760,7 +761,7 @@ img { display: block; max-width: 100%; }
   font-size: 1.2rem; 
   font-weight: 800;
   color: var(--peach); 
-  transition: background 0.2s;
+  transition: 0.2s;
 }
 
 .course-link:hover   { background: var(--peach-lt); }
@@ -991,9 +992,7 @@ footer {
    RESPONSIVE
 =================================================== */
 @media (max-width: 1024px) {
-  .header-main   { padding: 0.7rem 1.5rem; }
   .hero-inner    { flex-direction: column; padding: 0 1rem; }
-  .hero-visual   { display: none; }
   .oc-grid       { grid-template-columns: repeat(2, 1fr); }
   .course-grid   { grid-template-columns: 1fr 1fr; }
   .career-inner  { grid-template-columns: 1fr; gap: 2rem; }
@@ -1004,7 +1003,9 @@ footer {
   .side-btns     { display: none; }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .news-item     { display: block;}
+  .news-text     { display: block;}
   .oc-grid        { grid-template-columns: repeat(1, 1fr); }
   .course-grid    { grid-template-columns: 1fr; }
   .campus-grid    { grid-template-columns: repeat(1, 1fr); }
