@@ -800,7 +800,7 @@ img { display: block; max-width: 100%; }
   background: var(--mint-bg); border-color: var(--mint-lt); }
 
 .cnum-n { 
-  font-size: 2.4rem; 
+  font-size: 3.5rem; 
   font-weight: 900; 
   color: var(--peach); line-height: 1; 
 }
