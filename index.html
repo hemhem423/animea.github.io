@@ -117,20 +117,6 @@
       <div class="hero-inner">
         <!-- テキスト -->
         <div class="hero-text">
-          <div class="hero-stats">
-            <div class="h-stat">
-              <div class="h-stat-n">98%</div>
-              <div class="h-stat-l">就職内定率</div>
-            </div>
-            <div class="h-stat">
-              <div class="h-stat-n">100+</div>
-              <div class="h-stat-l">提携動物病院</div>
-            </div>
-            <div class="h-stat">
-              <div class="h-stat-n">No.1</div>
-              <div class="h-stat-l">国試合格率<br />（25年の実績）</div>
-            </div>
-          </div>
           <h1 class="hero-title">
             <span class="c-pink">動物が好き</span>!<br />
             その気持ちが
@@ -156,8 +142,13 @@
                 <img src="image/teacher.jpg" alt="" />
               </div>
             </div>
-          </div>
-        </div>
+          <!-- ドットインジケーター -->
+      <div class="hero-dots" id="heroDots">
+        <button class="hero-dot active" data-index="0"></button>
+        <button class="hero-dot" data-index="1"></button>
+        <button class="hero-dot" data-index="2"></button>
+      </div>
+    </div>
       </div>
     </section>
 
@@ -430,11 +421,6 @@
                 <div class="cnum-n">100 +</div>
                 <div class="cnum-l">提携・実習先<br />動物病院・施設数</div>
               </div>
-              <div class="cnum-card">
-                <div class="cnum-n">2,800 +</div>
-                <div class="cnum-l">教育実績<br /></div>
-              </div>
-            </div>
           </div>
 
           <!-- 資格 -->
@@ -476,14 +462,14 @@
     </section>
 
     <!-- ===================================================
-     キャンパスライフ ナビバナー
-=================================================== -->
+    キャンパスライフ ナビバナー
+　　=================================================== -->
     <section class="section" id="campus-links">
       <div class="container">
         <div class="sec-head reveal">
           <div class="sec-head-left">
             <div class="sec-en">SCHOOL LIFE</div>
-            <div class="sec-title">学校生活・施設</div>
+            <div class="sec-title">学校のご紹介</div>
           </div>
         </div>
         <div class="campus-grid">
@@ -508,13 +494,6 @@
             <div class="campus-btn-en">TEACHER</div>
             <div class="campus-btn-ja">先生紹介</div>
           </a>
-          <a href="#" class="campus-btn reveal d4">
-            <div class="campus-btn-icon">
-              <img src="image/teacher.jpg" alt="" />
-            </div>
-            <div class="campus-btn-en">CURRICULUM</div>
-            <div class="campus-btn-ja">授業のヒミツ</div>
-          </a>
         </div>
       </div>
     </section>
@@ -532,7 +511,7 @@
             </div>
             <p class="ft-address">
               〒150-0000 東京都渋谷区南平台町1-1 ANIMEAビル<br />
-              渋谷駅 徒歩8分 ／ 代官山駅 徒歩5分<br />
+              渋谷駅 徒歩8分 / 代官山駅 徒歩5分<br />
               TEL: 03-1234-5678（平日9:00〜18:00）<br />
               mail: info@animea.ac.jp
             </p>
