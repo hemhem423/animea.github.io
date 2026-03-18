@@ -516,7 +516,8 @@ img { display: block; max-width: 100%; }
 /* ===================================================
    SECTION COMMON
 =================================================== */
-.section   { padding: 4.5rem 0; }
+.section   { 
+  padding: 8rem 0; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
 
 .sec-head {
@@ -839,8 +840,11 @@ img { display: block; max-width: 100%; }
    キャンパスライフ ナビバナー
 =================================================== */
 #campus-links .container{
+      max-width: 1280px;
   background: var(--cream);
   border-radius: 2rem; 
+  border: 2px solid var(--peach-lt);
+  padding: 3rem;
 }
 .sec-head.campus{
   display: block;
@@ -853,7 +857,7 @@ img { display: block; max-width: 100%; }
   display: grid; 
   grid-template-columns: repeat(3, 1fr); 
   gap: 1rem;
-  padding: 2rem;
+
 }
 
 .campus-btn {
@@ -873,8 +877,9 @@ img { display: block; max-width: 100%; }
 }
 
   .campus-btn-icon img{
-  animation: blob-morph 50s ease-in-out infinite;
+  animation: blob-morph 20s ease-in-out infinite;
   height: 300px;
+  object-fit: cover;
   }
 .campus-btn-en   { 
   font-size: 0.8rem; 
