@@ -598,8 +598,9 @@ img { display: block; max-width: 100%; }
 
 .oc-card {
   border-radius: 1.2rem;
-  overflow: hidden; border: 1.5px solid var(--peach-lt);
-  transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s; 
+  cursor: pointer;
 }
 
 .oc-card:hover {
