@@ -937,7 +937,7 @@ footer {
   align-items: center;
   padding: 1.2rem 0; 
   font-size: 0.9rem; 
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--text);
 }
 
 .ft-sns { 
@@ -997,4 +997,5 @@ footer {
   .other-grid     { grid-template-columns: 1fr; }
   .ft-top         { grid-template-columns: 1fr; }
   .career-nums    { grid-template-columns: 1fr; }
+  #campus-links .container{ padding: 3rem 1.5rem;}
 }
