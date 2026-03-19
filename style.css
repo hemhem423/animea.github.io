@@ -307,7 +307,7 @@ img { display: block; max-width: 100%; }
 .hero-text { 
   width: 65%;
   flex: 1; }
-@media screen and(max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .hero-text { 
     width: 100%;
 }}
@@ -418,7 +418,8 @@ img { display: block; max-width: 100%; }
 @media screen and (max-width: 1024px) {
   .hero-visual { 
     width: 80%;
-    top: -160px;
+    top: -50px;
+    right: -100px;
 }}
 .hero-img {
   width: 100%;
@@ -818,8 +819,11 @@ img { display: block; max-width: 100%; }
 /* ===================================================
    キャンパスライフ ナビバナー
 =================================================== */
+#campus-links {
+  padding: 8rem 2rem;
+}
 #campus-links .container{
-      max-width: 1280px;
+  max-width: 1280px;
   background: var(--cream);
   border-radius: 2rem; 
   border: 2px solid var(--peach-lt);
@@ -859,6 +863,7 @@ img { display: block; max-width: 100%; }
   animation: blob-morph 20s ease-in-out infinite;
   height: 300px;
   object-fit: cover;
+  margin: auto;
   }
 .campus-btn-en   { 
   font-size: 0.8rem; 
@@ -974,6 +979,8 @@ footer {
   .oc-grid       { grid-template-columns: repeat(2, 1fr); }
   .course-grid   { grid-template-columns: 1fr 1fr; }
   .career-inner  { grid-template-columns: 1fr; gap: 2rem; }
+  .qual-list     { grid-template-columns: 1fr;}
+  .qual-name     { font-size: 1.3rem;}
   .campus-grid   { grid-template-columns: repeat(2, 1fr); }
   .other-grid    { grid-template-columns: 1fr 1fr; }
   .container     { padding: 0 1.5rem; }
