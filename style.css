@@ -504,7 +504,7 @@ img { display: block; max-width: 100%; }
 .paw-bg span {
   position: absolute;
   font-size: 8rem;
-  opacity: 0.1;
+  opacity: 0.06;
   user-select: none;
   transform: rotate(var(--rot));
 }
@@ -870,7 +870,7 @@ footer {
 }
 #campus-links .container{
   max-width: 1280px;
-  background: var(--cream);
+  background: #fffbf7;
   border-radius: 2rem; 
   border: 2px solid var(--peach-lt);
   padding: 3rem;
