@@ -120,12 +120,14 @@ sections.forEach((section) => activeObserver.observe(section));
   const INTERVAL = 4000; // 切り替え間隔（ms）
 
   function goTo(index) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = (index + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-  }
+  slides[current].classList.remove('active');
+  if (dots[current]) dots[current].classList.remove('active'); // ← 存在チェック追加
+
+  current = (index + slides.length) % slides.length;
+
+  slides[current].classList.add('active');
+  if (dots[current]) dots[current].classList.add('active');   // ← 存在チェック追加
+}
 
   function startAuto() {
     timer = setInterval(() => goTo(current + 1), INTERVAL);
