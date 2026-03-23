@@ -186,3 +186,46 @@ document.querySelectorAll('[data-scroll-top]').forEach((btn) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
+
+
+// ===================================================
+// 足跡背景
+// ===================================================
+(function () {
+  const pawBg = document.createElement('div');
+  pawBg.className = 'paw-bg';
+
+  // 足跡をランダム配置
+  const positions = [
+    { top:  8, left:  5, rot: -20 },
+    { top: 18, left: 88, rot:  15 },
+    { top: 30, left: 15, rot: -35 },
+    { top: 42, left: 75, rot:  25 },
+    { top: 55, left:  8, rot: -10 },
+    { top: 63, left: 60, rot:  40 },
+    { top: 72, left: 30, rot: -25 },
+    { top: 80, left: 82, rot:  10 },
+    { top: 90, left: 20, rot: -40 },
+    { top: 95, left: 55, rot:  20 },
+  ];
+
+  positions.forEach(({ top, left, rot }) => {
+    const span = document.createElement('span');
+    span.textContent = '🐾';
+    span.style.top  = `${top}%`;
+    span.style.left = `${left}%`;
+    span.style.setProperty('--rot', `${rot}deg`);
+    pawBg.appendChild(span);
+  });
+
+  document.body.appendChild(pawBg);
+
+  // ヒーローセクションを超えたら表示
+  const hero = document.querySelector('.hero');
+
+  window.addEventListener('scroll', () => {
+    if (!hero) return;
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    pawBg.classList.toggle('visible', heroBottom < 0);
+  }, { passive: true });
+})();

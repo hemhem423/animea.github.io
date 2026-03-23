@@ -488,6 +488,27 @@ img { display: block; max-width: 100%; }
 /* ===================================================
    SECTION COMMON
 =================================================== */
+/* 足跡：固定背景レイヤー */
+.paw-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  /* ヒーローより下からのみ表示 */
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.paw-bg.visible { opacity: 1; }
+
+.paw-bg span {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.045;
+  user-select: none;
+  transform: rotate(var(--rot));
+}
 .section   { 
   padding: 8rem 0; }
 .container { 
