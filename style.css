@@ -671,6 +671,7 @@ img { display: block; max-width: 100%; }
   border: 1.5px solid var(--border);
   background: white;
   transition: box-shadow 0.2s;
+  cursor: pointer;
 }
 
 .course-item:hover {
