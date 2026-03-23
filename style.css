@@ -648,7 +648,7 @@ img { display: block; max-width: 100%; }
   font-size: 4rem; flex-shrink: 0; border: 2px solid var(--border);
 }
 .gallery-photo:nth-child(2n){
-  padding-top: 50px;
+  margin-top: 50px;
 }
 .gallery-photo img{
   border-radius: 1rem;
