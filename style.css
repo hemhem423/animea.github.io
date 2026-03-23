@@ -11,12 +11,12 @@
   --mint-bg:   #F0FBF6;
   --yellow:    #FFD166;
   --sky:       #7EC8E3;
-  --cream:     #FFFBF7;
+  --cream:     #fffbf781;
   --border:    #F0E4DC;
   --text:      #3D2B1F;
   --text-mid:  #8A6F5E;
   --text-lt:   #C0A898;
-  --white:     #FFFFFF;
+  --white:     #ffffff88;
 }
 
 /* ===================================================
@@ -486,20 +486,19 @@ img { display: block; max-width: 100%; }
 }
 
 /* ===================================================
-   SECTION COMMON
+   paw
 =================================================== */
 /* 足跡：固定背景レイヤー */
 .paw-bg {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
   /* ヒーローより下からのみ表示 */
   opacity: 0;
   transition: opacity 0.5s;
 }
-
 .paw-bg.visible { opacity: 1; }
 
 .paw-bg span {
@@ -509,6 +508,14 @@ img { display: block; max-width: 100%; }
   user-select: none;
   transform: rotate(var(--rot));
 }
+.section,
+footer {
+  position: relative;
+  z-index: 1;
+}
+/* ===================================================
+   SECTION COMMON
+=================================================== */
 .section   { 
   padding: 8rem 0; }
 .container { 
