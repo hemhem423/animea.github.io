@@ -858,20 +858,15 @@ img { display: block; max-width: 100%; }
   object-fit: cover;
   margin: auto;
   }
-.campus-btn-en   { 
-  font-size: 0.8rem; 
-  font-weight: 800; letter-spacing: 0.12em; 
-  color: var(--peach); margin-bottom: 0.25rem; }
+
 .campus-btn-ja   { 
   font-size: 1.2rem; 
   font-weight: 800; 
   color: var(--text); 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;}
+}
 
-.campus-btn-arrow {
+.campus-btn-ja::after {
+  content: '→';
   display: flex;
   align-items: center;
   justify-content: center;
@@ -885,7 +880,7 @@ img { display: block; max-width: 100%; }
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
-.campus-btn:hover .campus-btn-arrow {
+.campus-btn:hover .campus-btn-ja::after {
   background: var(--peach);
   color: white;
   transform: translateX(4px);
