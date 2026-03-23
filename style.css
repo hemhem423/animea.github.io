@@ -5,7 +5,7 @@
   --peach:     #FF8C69;
   --peach-d:   #E8714E;
   --peach-lt:  #FFD4C2;
-  --peach-bg:  #FFF5F0;
+  --peach-bg:  #fff5f083;
   --mint:      #5CC8A0;
   --mint-lt:   #C2EDD9;
   --mint-bg:   #F0FBF6;
@@ -503,8 +503,8 @@ img { display: block; max-width: 100%; }
 
 .paw-bg span {
   position: absolute;
-  font-size: 2rem;
-  opacity: 0.045;
+  font-size: 8rem;
+  opacity: 0.1;
   user-select: none;
   transform: rotate(var(--rot));
 }
@@ -798,7 +798,7 @@ footer {
 /* ===================================================
    就職・資格
 =================================================== */
-#career { background: white; }
+#career { background: var(--white); }
 #career .more-link{
   text-align: center;
 }

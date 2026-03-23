@@ -199,10 +199,9 @@ document.querySelectorAll('[data-scroll-top]').forEach((btn) => {
   const positions = [
     { top:  8, left:  5, rot: -20 },
     { top: 18, left: 88, rot:  15 },
-    { top: 30, left: 15, rot: -35 },
+    { top: 30, left: 20, rot: 0 },
     { top: 42, left: 75, rot:  25 },
     { top: 55, left:  8, rot: -10 },
-    { top: 63, left: 60, rot:  40 },
     { top: 72, left: 30, rot: -25 },
     { top: 80, left: 82, rot:  10 },
     { top: 90, left: 20, rot: -40 },
