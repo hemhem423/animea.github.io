@@ -409,7 +409,7 @@ img { display: block; max-width: 100%; }
   width: 45%;
   flex-shrink: 0;
   position: absolute;
-  top: -200px;
+  top: -120px;
   right: 0;
 
 }
@@ -862,7 +862,11 @@ img { display: block; max-width: 100%; }
 .campus-btn-ja   { 
   font-size: 1.2rem; 
   font-weight: 800; 
-  color: var(--text); 
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
 }
 
 .campus-btn-ja::after {
@@ -987,8 +991,8 @@ footer {
 =================================================== */
 @media (max-width: 1023px) {
   .hero-inner    { flex-direction: column; padding: 0 1rem; }
-  .hero-visual   { width: 80%; top: 10px; right: -120px; }
-  .hero-text     { width: 100%;}
+  .hero-visual   { width: 80%; top: -400px; right: 0; }
+  .hero-text     { width: 100%; position: relative; z-index: 10;}
   .oc-grid       { grid-template-columns: repeat(2, 1fr); }
   .course-grid   { grid-template-columns: 1fr 1fr; }
   .career-inner  { grid-template-columns: 1fr; gap: 2rem; }
@@ -1002,6 +1006,7 @@ footer {
 }
 
 @media (max-width: 767px) {
+  .hero-visual   { top: -300px; }
   .news-item     { display: block;}
   .news-text     { display: block;}
   .oc-grid        { grid-template-columns: repeat(1, 1fr); }
