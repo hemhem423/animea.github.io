@@ -616,7 +616,9 @@ footer {
       background: linear-gradient(to bottom, #ffffff00 0%, #FFF8F0 20%, #FFF8F0 50%, #FFF8F0 80%, #ffffff00 100%); }
 
 .oc-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2rem;
 }
 
 .oc-card {
@@ -661,7 +663,7 @@ footer {
   display: flex; 
   gap: 0.8rem;
   animation: slide 30s linear infinite; 
-  margin-top: 1rem;
+  margin-top: 5rem;
   width: max-content;
 }
 
@@ -683,7 +685,6 @@ footer {
 /* ===================================================
    COURSE / 学科
 =================================================== */
-#course { background: var(--cream); }
 
 .course-list {
   display: flex;
@@ -703,7 +704,7 @@ footer {
 }
 
 .course-item:hover {
-  box-shadow: 0 16px 48px rgba(61, 43, 31, 0.1);
+  box-shadow: 0 10px 20px rgba(61, 43, 31, 0.1);
 }
 
 /* 偶数カード：画像を右に */
@@ -940,8 +941,8 @@ footer {
    FOOTER
 =================================================== */
 footer {
-  background: var(--peach-bg);
-  color: white; padding: 3.5rem 3rem 0;
+  background: linear-gradient(to bottom, #ffffff00 0%, #FFF8F0 100%,);
+  padding: 3.5rem 3rem 0;
 }
 
 .ft-inner { max-width: 1200px; margin: 0 auto; }
