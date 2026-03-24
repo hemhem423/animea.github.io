@@ -797,7 +797,7 @@ footer {
 /* ===================================================
    就職・資格
 =================================================== */
-#career { background: var(--white); }
+
 #career .more-link{
   text-align: center;
 }
@@ -866,11 +866,6 @@ footer {
 =================================================== */
 #campus-links {
   padding: 8rem 2rem;
-}
-#campus-links .container{
-  max-width: 1280px;
-  border-radius: 2rem; 
-  padding: 3rem;
 }
 .sec-head.campus{
   display: block;
@@ -944,7 +939,7 @@ footer {
    FOOTER
 =================================================== */
 footer {
-  background: var(--cream);
+  background: var(--peach-bg);
   color: white; padding: 3.5rem 3rem 0;
 }
 
@@ -1065,5 +1060,4 @@ footer {
   .other-grid    { grid-template-columns: 1fr; }
   .ft-top        { grid-template-columns: 1fr; }
   .career-nums   { grid-template-columns: 1fr; }
-  #campus-links .container{ padding: 3rem 1.5rem;}
 }
