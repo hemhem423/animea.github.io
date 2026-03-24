@@ -62,8 +62,7 @@ img { display: block; max-width: 100%; }
 .logo { display: flex; align-items: center; gap: 0.6rem; }
 
 .logo-icon {
-  width: 46px; 
-  height: 46px;
+  width: 60px; 
   display: flex; 
   align-items: center; 
   justify-content: center;
@@ -788,6 +787,8 @@ footer {
   color: var(--peach);
   font-size: 1.2rem;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 /* レスポンシブ */
