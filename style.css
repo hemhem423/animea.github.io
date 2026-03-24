@@ -67,7 +67,7 @@ img { display: block; max-width: 100%; }
   display: flex; 
   align-items: center; 
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 3rem;
 }
 
 .logo-name {
@@ -76,7 +76,7 @@ img { display: block; max-width: 100%; }
 }
 
 .logo-sub {
-  font-size: 1rem; 
+  font-size: 1.3rem; 
   color: var(--text-mid); 
   letter-spacing: 0.04em;
 }
