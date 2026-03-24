@@ -718,6 +718,18 @@ footer {
 .course-item-img {
   height: 380px;
   overflow: hidden;
+  border-radius: 1.5rem; 
+  position: relative;
+}
+.course-item-img::before{
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 5px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--border);
 }
 
 .course-item-img img {
@@ -789,6 +801,7 @@ footer {
   font-weight: bold;
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 /* レスポンシブ */
