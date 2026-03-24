@@ -612,7 +612,8 @@ footer {
 /* ===================================================
    OC / イベント
 =================================================== */
-#oc { background: var(--peach-bg); }
+#oc { 
+      background: linear-gradient(to bottom, #ffffff00 0%, #FFF8F0 20%, #FFF8F0 50%, #FFF8F0 80%, #ffffff00 100%); }
 
 .oc-grid {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
