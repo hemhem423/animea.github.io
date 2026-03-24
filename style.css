@@ -525,7 +525,6 @@ footer {
   display: flex; align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 2rem; padding-bottom: 1rem;
-  border-bottom: 2px solid var(--border);
 }
 
 .sec-head-left {}
@@ -870,9 +869,7 @@ footer {
 }
 #campus-links .container{
   max-width: 1280px;
-  background: #fffbf7;
   border-radius: 2rem; 
-  border: 2px solid var(--peach-lt);
   padding: 3rem;
 }
 .sec-head.campus{
