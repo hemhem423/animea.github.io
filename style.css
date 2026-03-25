@@ -11,12 +11,15 @@
   --mint-bg:   #F0FBF6;
   --yellow:    #FFD166;
   --sky:       #7EC8E3;
+  --sky-lt:    #c0e3f0;
+  --sky-bg:    #f4fcff;
   --cream:     #fffbf781;
   --border:    #F0E4DC;
   --text:      #3D2B1F;
   --text-mid:  #8A6F5E;
   --text-lt:   #C0A898;
   --white:     #ffffff88;
+  
 }
 
 /* ===================================================
@@ -816,18 +819,18 @@ footer {
   border-radius: 50%;
   border: 2px solid var(--peach);
   color: var(--peach);
+  border-radius: 1.5rem;
   font-size: 0.9rem;
   flex-shrink: 0;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
 .course-link.g{
-  color: var(--peach);
+  color: var(--mint);
 }
 .course-link.g::after{
   border: 2px solid var(--mint);
   color: var(--mint);}
-
 
 .course-link.s{
   color: var(--sky);
@@ -873,10 +876,13 @@ footer {
   border: 2px solid var(--peach-lt);
   text-align: center; 
 }
-
 .cnum-card.g { 
   animation: blob-morph 15s ease-in-out infinite;
   background: var(--mint-bg); border-color: var(--mint-lt); }
+.cnum-card.s { 
+  animation: blob-morph 15s ease-in-out infinite;
+  background: var(--sky-bg); 
+  border-color: var(--sky-lt); }
 
 .cnum-n { 
   font-size: 3.5rem; 
@@ -885,6 +891,8 @@ footer {
 }
 .cnum-card.g .cnum-n { 
   color: var(--mint); }
+.cnum-card.g .cnum-s { 
+  color: var(--sky); }
 .cnum-l { 
   font-size: 1.2rem; 
   color: var(--text-mid); 
