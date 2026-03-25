@@ -722,20 +722,23 @@ footer {
 .course-item-img::before{
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: -10px;
   left: 5px;
+  border-radius: 1.5rem; 
   z-index: 1;
   width: 100%;
   height: 100%;
   border: 3px solid var(--peach);
 }
-.course-item-img.d2::before{
+.d2 .course-item-img::before{
   border: 3px solid var(--mint);
 }
-.course-item-img.d3::before{
+.d3 .course-item-img::before{
   border: 3px solid var(--sky);
 }
-
+.course-item-img::before:hover{
+  transform: scale(1.04);
+}
 .course-item-img img {
   width: 100%;
   height: 100%;
