@@ -265,8 +265,8 @@ img { display: block; max-width: 100%; }
   padding-right: 0.9rem; }
 
 .side-oc   { background: var(--peach); }
-.side-doc  { background: var(--mint); }
-.side-line { background: #00B900; }
+.side-doc  { background: var(--sky); }
+.side-line { background: var(--mint); }
 
 /* ===================================================
    HERO / メインビジュアル
@@ -633,6 +633,7 @@ footer {
 }
 .oc-card:hover .oc-thumb img {
   transform: scale(1.04);
+  transition: transform 0.4s ease;
 }
 .oc-thumb {
   display: flex; 
@@ -697,7 +698,6 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-radius: 1.5rem;
-  overflow: hidden;
   transition: box-shadow 0.2s;
   cursor: pointer;
 }
@@ -713,7 +713,6 @@ footer {
 /* 画像エリア */
 .course-item-img {
   height: 380px;
-  overflow: hidden;
   border-radius: 1.5rem; 
   position: relative;
 }
@@ -725,13 +724,20 @@ footer {
   z-index: 1;
   width: 100%;
   height: 100%;
-  border: 3px solid var(--border);
+  border: 3px solid var(--peach);
+}
+.course-item-img.d2::before{
+  border: 3px solid var(--mint);
+}
+.course-item-img.d3::before{
+  border: 3px solid var(--sky);
 }
 
 .course-item-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 1.5rem;
   transition: transform 0.4s ease;
 }
 
@@ -748,7 +754,8 @@ footer {
   gap: 1.5rem;
 }
 
-.course-item-head { display: flex; flex-direction: column; gap: 0.4rem; }
+.course-item-head { 
+  display: flex; flex-direction: column; gap: 0.4rem; }
 
 /* カラーバリエーション */
 .course-item-head[data-color="peach"] .course-name { color: var(--peach); }
@@ -799,6 +806,35 @@ footer {
   align-items: center;
   gap: 10px;
 }
+.course-link::after{
+  content: '→';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--peach);
+  color: var(--peach);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.course-link.g{
+  color: var(--peach);
+}
+.course-link.g::after{
+  border: 2px solid var(--mint);
+  color: var(--mint);}
+
+
+.course-link.s{
+  color: var(--sky);
+}
+.course-link.s::after{
+  border: 2px solid var(--sky);
+  color: var(--sky);}
 
 /* レスポンシブ */
 @media (max-width: 768px) {
@@ -932,7 +968,7 @@ footer {
   gap: 10px; 
 }
 
-.campus-btn-ja::after ,.course-link::after{
+.campus-btn-ja::after {
   content: '→';
   display: flex;
   align-items: center;
