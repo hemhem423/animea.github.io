@@ -321,7 +321,7 @@ img { display: block; max-width: 100%; }
 
 .hero-en-catch span {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
   font-weight: 400;
   letter-spacing: 0.04em;
   color: #fff;
@@ -1102,6 +1102,7 @@ footer {
    RESPONSIVE
 =================================================== */
 @media (max-width: 1023px) {
+
   .hero-inner    { flex-direction: column; padding: 0 1rem; }
   .hero-visual   { width: 80%; top: -400px; right: 0; }
   .hero-text     { width: 100%; position: relative; z-index: 10;}
@@ -1118,6 +1119,10 @@ footer {
 }
 
 @media (max-width: 767px) {
+  #header        { background: none; }
+  .logo-name     { font-size: 2rem; }
+  .logo-sub      { font-size: 1rem; padding: 70px 0 0; }
+  .hero          { margin-top: 0; }
   .hero-visual   { top: -300px; }
   .news-item     { display: block;}
   .news-text     { display: block;}
