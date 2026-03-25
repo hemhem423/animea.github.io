@@ -1122,7 +1122,7 @@ footer {
   #header        { background: none; }
   .logo-name     { font-size: 2rem; }
   .logo-sub      { font-size: 1rem; padding: 70px 0 0; }
-  .hero          { margin-top: 0; }
+  .hero          { margin-top: 0; padding: 80px 0 0;}
   .hero-visual   { top: -300px; }
   .news-item     { display: block;}
   .news-text     { display: block;}
@@ -1132,4 +1132,7 @@ footer {
   .other-grid    { grid-template-columns: 1fr; }
   .ft-top        { grid-template-columns: 1fr; }
   .career-nums   { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  .hero          { margin-top: 0; padding: 30rem 0 0;}
 }
