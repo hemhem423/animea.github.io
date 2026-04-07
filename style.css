@@ -59,7 +59,7 @@ img { display: block; max-width: 100%; }
 .header-main {
   display: flex; align-items: center;
   justify-content: space-between;
-  padding: 1rem 2.5rem;
+  padding: 1.5rem 2.5rem;
 }
 
 .logo { display: flex; align-items: center; gap: 0.6rem; }
@@ -174,7 +174,6 @@ img { display: block; max-width: 100%; }
 
   .hamburger { display: flex; }
   .header-ctas { display: none; }
-  .header-main { padding: 1rem 1.5rem; }
   /* 以降の既存レスポンシブ設定も 1024px → 1200px に変更 */
 }
 /* global nav */
@@ -846,6 +845,8 @@ footer {
 
 /* レスポンシブ */
 @media (max-width: 768px) {
+  
+  .header-main { padding: 1rem 1.5rem; }
   .course-item,
   .course-item.reverse {
     grid-template-columns: 1fr;
