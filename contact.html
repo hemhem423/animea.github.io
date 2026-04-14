@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お問い合わせ | 動物医療専門学校 ANIMEA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== パンくず ===== */
+        
+        .breadcrumb {
+            padding: 1rem 3rem;
+            font-size: 0.85rem;
+            color: var(--text-lt);
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .breadcrumb a {
+            color: var(--peach);
+        }
+        
+        .breadcrumb span {
+            margin: 0 0.4rem;
+        }
+        /* ===== ページヒーロー ===== */
+        
+        .page-hero {
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            margin-top: 95px;
+        }
+        
+        .page-hero-img {
+            position: absolute;
+            inset: 0;
+        }
+        
+        .page-hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(61, 43, 31, 0.65) 0%, rgba(61, 43, 31, 0.1) 60%, transparent 100%);
+        }
+        
+        .page-hero-text {
+            position: relative;
+            z-index: 2;
+            padding: 2.5rem 3rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .page-hero-en {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.1em;
+            line-height: 1;
+            display: block;
+        }
+        
+        .page-hero-ja {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+        }
+        /* ===== お問い合わせセクション全体 ===== */
+        
+        .contact-section {
+            padding: 6rem 0 8rem;
+        }
+        
+        .contact-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 5rem;
+            align-items: start;
+        }
+        /* ===== 左カラム：問い合わせ方法 ===== */
+        
+        .contact-methods {}
+        
+        .contact-method-title {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-method-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: box-shadow 0.2s;
+        }
+        
+        .contact-method-card:hover {
+            box-shadow: 0 8px 24px rgba(61, 43, 31, 0.08);
+        }
+        
+        .contact-method-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            background: var(--peach-bg);
+        }
+        
+        .contact-method-info {}
+        
+        .contact-method-name {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--peach);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.2rem;
+        }
+        
+        .contact-method-val {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 0.2rem;
+        }
+        
+        .contact-method-note {
+            font-size: 0.8rem;
+            color: var(--text-lt);
+        }
+        /* ===== フォーム ===== */
+        
+        .contact-form-wrap {
+            background: white;
+            border-radius: 2rem;
+            padding: 3rem;
+            border: 1.5px solid var(--border);
+            box-shadow: 0 8px 32px rgba(61, 43, 31, 0.06);
+        }
+        
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-lt);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        /* タブ切り替え */
+        
+        .form-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            background: var(--cream);
+            border-radius: 100px;
+            padding: 4px;
+        }
+        
+        .form-tab {
+            flex: 1;
+            padding: 0.65rem 1rem;
+            border-radius: 100px;
+            border: none;
+            background: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-lt);
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            font-family: "Zen Maru Gothic", sans-serif;
+        }
+        
+        .form-tab.active {
+            background: var(--peach);
+            color: white;
+            box-shadow: 0 3px 10px rgba(255, 140, 105, 0.3);
+        }
+        /* フォームフィールド */
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-required {
+            background: var(--peach);
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 800;
+        }
+        
+        .form-optional {
+            background: var(--mint-bg);
+            color: var(--mint);
+            font-size: 0.65rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 800;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.85rem 1.1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 0.8rem;
+            font-size: 1rem;
+            font-family: "Zen Maru Gothic", sans-serif;
+            color: var(--text);
+            background: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--peach);
+            box-shadow: 0 0 0 3px rgba(255, 140, 105, 0.12);
+        }
+        
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-lt);
+        }
+        
+        .form-textarea {
+            height: 140px;
+            resize: vertical;
+            line-height: 1.7;
+        }
+        
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C0A898' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        /* チェックボックス */
+        
+        .form-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.6;
+            cursor: pointer;
+        }
+        
+        .form-check input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            accent-color: var(--peach);
+            cursor: pointer;
+            margin-top: 2px;
+        }
+        
+        .form-check a {
+            color: var(--peach);
+            text-decoration: underline;
+        }
+        /* 送信ボタン */
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.1rem;
+            background: linear-gradient(135deg, var(--peach), #FF6B6B);
+            color: white;
+            border: none;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            font-family: "Zen Maru Gothic", sans-serif;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(255, 140, 105, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 1.5rem;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 140, 105, 0.4);
+        }
+        /* サンクスメッセージ（送信後） */
+        
+        .form-thanks {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .form-thanks-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-thanks-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 0.8rem;
+        }
+        
+        .form-thanks-body {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            line-height: 1.8;
+        }
+        /* レスポンシブ */
+        
+        @media (max-width: 1024px) {
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .page-hero {
+                height: 240px;
+                margin-top: 70px;
+            }
+            .page-hero-text {
+                padding: 2rem 1.5rem;
+            }
+            .contact-form-wrap {
+                padding: 2rem 1.5rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .breadcrumb {
+                padding: 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <!-- メインヘッダー行 -->
+        <div class="header-main">
+            <!-- ロゴ -->
+            <a href="/" class="logo">
+                <div class="logo-icon"><img src="image/logo.png" alt="ロゴ"></div>
+                <div>
+                    <div class="logo-name">ANIMEA</div>
+                </div>
+            </a>
+            <!-- ハンバーガーボタン（1200px以下で表示） -->
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+            <!-- グローバルナビ -->
+            <nav class="gnav-wrap" id="gnavWrap">
+                <ul class="gnav">
+                    <li>
+                        <a href="#">当校について <span class="gnav-arrow">▼</span></a>
+                        <div class="dropdown">
+                            <a href="#">学校紹介</a>
+                            <a href="#">施設紹介</a>
+                            <a href="#">キャンパスライフ</a>
+
+                            <a href="#">めざせる資格</a>
+                            <a href="#">就職実績</a>
+                            <a href="#">先生紹介</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">学科・コース <span class="gnav-arrow">▼</span></a>
+                        <div class="dropdown">
+                            <a href="#">動物看護学科</a>
+                            <a href="#">動物トータルケア学科</a>
+                            <a href="#">野生動物・動物園学科</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">オープンキャンパス</a
+              >
+
+        </li>
+        <li>
+            <a href="#">入学案内 <span class="gnav-arrow">▼</span></a>
+                        <div class="dropdown">
+                            <a href="#">入試情報</a>
+                            <a href="#">AO入試</a>
+                            <a href="#">募集要項</a>
+                            <a href="#">学費・奨学金</a>
+                            <a href="#">エントリーフォーム</a>
+                        </div>
+                    </li>
+                    <li><a href="#">アクセス</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="side-btns">
+        <a href="#" class="side-btn side-oc">オープンキャンパス申込</a>
+        <a href="#" class="side-btn side-doc">資料請求</a>
+        <a href="#" class="side-btn side-line">公式LINE</a>
+    </div>
+
+    <!-- ページヒーロー -->
+    <div class="page-hero">
+        <div class="page-hero-img">
+            <img src="image/campus2.jpg" alt="お問い合わせ">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-text">
+            <span class="page-hero-en">CONTACT</span>
+            <div class="page-hero-ja">お問い合わせ</div>
+        </div>
+    </div>
+
+    <!-- パンくず -->
+    <nav class="breadcrumb">
+        <a href="index.html">TOP</a>
+        <span>›</span> お問い合わせ
+    </nav>
+
+    <!-- お問い合わせ本文 -->
+    <section class="contact-section">
+        <div class="contact-inner">
+
+            <!-- 左：問い合わせ方法 -->
+            <div class="contact-methods reveal">
+                <div class="contact-method-title">まずはお気軽に<br>ご連絡ください</div>
+                <p style="font-size:0.9rem; color:var(--text-mid); line-height:1.8; margin-bottom:2rem;">
+                    資料請求・オープンキャンパスのお申し込み・学校に関するご質問など、どんな内容でもお気軽にどうぞ。
+                </p>
+
+                <div class="contact-method-card">
+                    <div class="contact-method-icon">📞</div>
+                    <div class="contact-method-info">
+                        <div class="contact-method-name">お電話でのお問い合わせ</div>
+                        <div class="contact-method-val">03-1234-5678</div>
+                        <div class="contact-method-note">平日 9:00〜18:00（土日祝休）</div>
+                    </div>
+                </div>
+
+                <div class="contact-method-card">
+                    <div class="contact-method-icon" style="background:var(--mint-bg);">💬</div>
+                    <div class="contact-method-info">
+                        <div class="contact-method-name" style="color:var(--mint);">LINE公式アカウント</div>
+                        <div class="contact-method-val">@animea_official</div>
+                        <div class="contact-method-note">チャットで気軽にご質問いただけます</div>
+                    </div>
+                </div>
+
+                <div class="contact-method-card">
+                    <div class="contact-method-icon" style="background:#f0f0f0;">📸</div>
+                    <div class="contact-method-info">
+                        <div class="contact-method-name" style="color:#555;">Instagram</div>
+                        <div class="contact-method-val">@animea_school</div>
+                        <div class="contact-method-note">在校生の日常を発信しています</div>
+                    </div>
+                </div>
+
+                <div style="margin-top:2rem; padding:1.5rem; background:var(--peach-bg); border-radius:1rem; border:1px solid var(--peach-lt);">
+                    <p style="font-size:0.85rem; color:var(--text-mid); line-height:1.8;">
+                        📩 フォームよりお送りいただいたお問い合わせには、<strong>2〜3営業日以内</strong>にご返信いたします。お急ぎの場合はお電話にてご連絡ください。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 右：フォーム -->
+            <div class="contact-form-wrap reveal">
+                <div class="form-title">お問い合わせフォーム</div>
+                <div class="form-subtitle">必要事項をご入力の上、送信してください。</div>
+
+                <!-- タブ -->
+                <div class="form-tabs">
+                    <button class="form-tab active" data-tab="general">一般お問い合わせ</button>
+                    <button class="form-tab" data-tab="document">資料請求</button>
+                    <button class="form-tab" data-tab="oc">OC申込</button>
+                </div>
+
+                <!-- フォーム本体 -->
+                <form id="contactForm" novalidate>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">
+                  お名前
+                  <span class="form-required">必須</span>
+                </label>
+                            <input type="text" class="form-input" placeholder="山田 花子" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                  フリガナ
+                  <span class="form-required">必須</span>
+                </label>
+                            <input type="text" class="form-input" placeholder="ヤマダ ハナコ" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                メールアドレス
+                <span class="form-required">必須</span>
+              </label>
+                        <input type="email" class="form-input" placeholder="example@email.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">
+                  電話番号
+                  <span class="form-optional">任意</span>
+                </label>
+                            <input type="tel" class="form-input" placeholder="090-0000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                  都道府県
+                  <span class="form-optional">任意</span>
+                </label>
+                            <select class="form-select">
+                  <option value="">選択してください</option>
+                  <option>東京都</option>
+                  <option>神奈川県</option>
+                  <option>埼玉県</option>
+                  <option>千葉県</option>
+                  <option>その他</option>
+                </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="courseGroup">
+                        <label class="form-label">
+                興味のある学科
+                <span class="form-optional">任意</span>
+              </label>
+                        <select class="form-select">
+                <option value="">選択してください</option>
+                <option>動物看護学科（3年制）</option>
+                <option>動物トータルケア学科（2年制）</option>
+                <option>野生動物・動物園学科（2年制）</option>
+                <option>まだ決まっていない</option>
+              </select>
+                    </div>
+
+                    <div class="form-group" id="messageGroup">
+                        <label class="form-label">
+                お問い合わせ内容
+                <span class="form-required">必須</span>
+              </label>
+                        <textarea class="form-textarea" placeholder="ご質問・ご要望をご記入ください。" required></textarea>
+                    </div>
+
+                    <!-- OC希望日（OC申込タブのみ表示） -->
+                    <div class="form-group" id="ocDateGroup" style="display:none;">
+                        <label class="form-label">
+                希望日程
+                <span class="form-required">必須</span>
+              </label>
+                        <select class="form-select">
+                <option value="">選択してください</option>
+                <option>2025年7月20日（日）午後｜動物看護師体験</option>
+                <option>2025年7月20日（日）午後｜トリミング体験</option>
+                <option>2025年7月27日（日）午前｜AO入試説明会</option>
+                <option>2025年8月3日（日）午後｜ペットセラピー体験</option>
+              </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-check">
+                <input type="checkbox" required>
+                <span><a href="#">プライバシーポリシー</a>に同意する</span>
+              </label>
+                    </div>
+
+                    <button type="submit" class="form-submit">送信する 🐾</button>
+                </form>
+
+                <!-- 送信後サンクス -->
+                <div class="form-thanks" id="formThanks">
+                    <div class="form-thanks-icon">🐾</div>
+                    <div class="form-thanks-title">送信が完了しました！</div>
+                    <p class="form-thanks-body">
+                        お問い合わせありがとうございます。<br> 2〜3営業日以内にご入力のメールアドレス宛にご返信いたします。
+                        <br><br>
+                        <small style="color:var(--text-lt);">メールが届かない場合は、迷惑メールフォルダをご確認いただくか、お電話にてお問い合わせください。</small>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="ft-inner">
+            <div class="ft-top">
+                <div>
+                    <div class="ft-logo">
+                        <div class="ft-logo-name">ANIMEA</div>
+                    </div>
+                    <p class="ft-address">
+                        〒150-0000 東京都渋谷区南平台町1-1 ANIMEAビル<br> 渋谷駅 徒歩8分 / 代官山駅 徒歩5分<br> TEL: 03-1234-5678（平日9:00〜18:00）
+                    </p>
+                </div>
+                <div>
+                    <div class="ft-col-title">当校について</div>
+                    <ul class="ft-col-links">
+                        <li><a href="about.html">学校紹介</a></li>
+                        <li><a href="#">施設紹介</a></li>
+                        <li><a href="#">キャンパスライフ</a></li>
+                        <li><a href="#">就職・資格実績</a></li>
+                        <li><a href="#">アクセスマップ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="ft-col-title">学科・コース</div>
+                    <ul class="ft-col-links">
+                        <li><a href="course.html">動物看護学科</a></li>
+                        <li><a href="#">動物トータルケア学科</a></li>
+                        <li><a href="#">野生動物・動物園学科</a></li>
+                        <li><a href="#">入試情報・AO入試</a></li>
+                        <li><a href="#">学費・奨学金</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="ft-col-title">入学案内</div>
+                    <ul class="ft-col-links">
+                        <li><a href="#">入試情報</a></li>
+                        <li><a href="#">AO入試</a></li>
+                        <li><a href="#">募集要項</a></li>
+                        <li><a href="#">学費・奨学金</a></li>
+                        <li><a href="#">エントリーフォーム</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="ft-col-links">
+                        <li><a href="#">オープンキャンパス</a></li>
+                        <li><a href="#">アクセス</a></li>
+                        <li><a href="#">お問い合わせ</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ft-bottom">
+                <div class="ft-sns">
+                    <a href="#"><img src="image/instagram_logo.png" alt="公式Instagram"></a>
+                    <a href="#"><img src="image/line_logo_icon.png" alt="公式LINE"></a>
+                </div>
+                <div>© 2025 動物医療専門学校 ANIMEA All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // タブ切り替え
+        document.querySelectorAll('.form-tab').forEach((tab) => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const type = tab.dataset.tab;
+                // OC申込のみ日程セレクトを表示
+                document.getElementById('ocDateGroup').style.display = type === 'oc' ? 'block' : 'none';
+            });
+        });
+
+        // フォーム送信（デモ）
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('formThanks').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

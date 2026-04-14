@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>動物看護学科 | 動物医療専門学校 ANIMEA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== パンくず ===== */
+        
+        .breadcrumb {
+            padding: 1rem 3rem;
+            font-size: 0.85rem;
+            color: var(--text-lt);
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .breadcrumb a {
+            color: var(--peach);
+        }
+        
+        .breadcrumb span {
+            margin: 0 0.4rem;
+        }
+        /* ===== ページヒーロー ===== */
+        
+        .page-hero {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            margin-top: 95px;
+        }
+        
+        .page-hero-img {
+            position: absolute;
+            inset: 0;
+        }
+        
+        .page-hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(61, 43, 31, 0.65) 0%, rgba(61, 43, 31, 0.1) 60%, transparent 100%);
+        }
+        
+        .page-hero-text {
+            position: relative;
+            z-index: 2;
+            padding: 3rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .page-hero-en {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.1em;
+            line-height: 1;
+            display: block;
+        }
+        
+        .page-hero-ja {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .page-hero-badge {
+            display: inline-block;
+            background: var(--peach);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+        /* ===== 学科概要 ===== */
+        
+        .overview-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        .overview-img {
+            position: relative;
+        }
+        
+        .overview-img img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 2rem;
+        }
+        
+        .overview-img::before {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 12px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--peach-lt);
+            border-radius: 2rem;
+            z-index: -1;
+        }
+        
+        .overview-text {}
+        
+        .overview-lead {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .overview-lead .c-pink {
+            color: var(--peach);
+        }
+        
+        .overview-body {
+            font-size: 1rem;
+            color: var(--text-mid);
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+        
+        .overview-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .overview-tag {
+            background: var(--peach-bg);
+            color: var(--peach);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid var(--peach-lt);
+        }
+        /* ===== 学びのステップ ===== */
+        
+        .steps-section {
+            padding: 8rem 0;
+            background: linear-gradient(to bottom, #ffffff00 0%, #FFF8F0 20%, #FFF8F0 80%, #ffffff00 100%);
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+        /* 矢印線 */
+        
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: calc(33.3% - 1rem);
+            right: calc(33.3% - 1rem);
+            height: 2px;
+            background: linear-gradient(to right, var(--peach-lt), var(--peach-lt));
+            z-index: 0;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1.5px solid var(--border);
+            position: relative;
+            z-index: 1;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(255, 140, 105, 0.12);
+        }
+        
+        .step-card-head {
+            background: linear-gradient(135deg, var(--peach), #FF6B6B);
+            padding: 2rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+        
+        .step-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.3);
+            line-height: 1;
+        }
+        
+        .step-year {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: white;
+        }
+        
+        .step-card-body {
+            padding: 1.5rem;
+        }
+        
+        .step-subject-list {
+            list-style: none;
+            display: grid;
+            gap: 0.5rem;
+        }
+        
+        .step-subject-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .step-subject-list li::before {
+            content: '🐾';
+            font-size: 0.7rem;
+        }
+        /* ===== 先輩の声 ===== */
+        
+        .voice-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .voice-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1.5px solid var(--border);
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            transition: box-shadow 0.2s;
+        }
+        
+        .voice-card:hover {
+            box-shadow: 0 8px 24px rgba(61, 43, 31, 0.08);
+        }
+        
+        .voice-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid var(--peach-lt);
+        }
+        
+        .voice-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .voice-body {}
+        
+        .voice-quote {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .voice-quote::before {
+            content: '"';
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--peach-lt);
+            line-height: 0;
+            vertical-align: -1rem;
+            margin-right: 0.2rem;
+        }
+        
+        .voice-name {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-lt);
+        }
+        
+        .voice-name strong {
+            color: var(--peach);
+            margin-right: 0.3rem;
+        }
+        /* ===== 入試・学費 ===== */
+        
+        .admission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .admission-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            border: 1.5px solid var(--border);
+        }
+        
+        .admission-card-title {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .admission-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .admission-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .admission-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .admission-table td {
+            padding: 0.8rem 0.5rem;
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+        
+        .admission-table td:first-child {
+            font-weight: 700;
+            color: var(--peach);
+            min-width: 100px;
+            white-space: nowrap;
+        }
+        
+        .admission-table td:last-child {
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .btn-apply {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            background: linear-gradient(135deg, var(--peach), #FF6B6B);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            box-shadow: 0 4px 16px rgba(255, 140, 105, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn-apply:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(255, 140, 105, 0.4);
+        }
+        /* レスポンシブ */
+        
+        @media (max-width: 1024px) {
+            .overview-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            .steps-grid::before {
+                display: none;
+            }
+            .voice-grid {
+                grid-template-columns: 1fr;
+            }
+            .admission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .page-hero {
+                height: 280px;
+                margin-top: 70px;
+            }
+            .page-hero-text {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="image/logo.png" alt="ロゴ"></div>
+                <div>
+                    <div class="logo-name">ANIMEA</div>
+                </div>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+            <nav class="gnav-wrap" id="gnavWrap">
+                <ul class="gnav">
+                    <li>
+                        <a href="#">当校について <span class="gnav-arrow">▼</span></a>
+                        <div class="dropdown">
+                            <a href="about.html">学校紹介</a>
+                            <a href="#">施設紹介</a>
+                            <a href="#">キャンパスライフ</a>
+                            <a href="#">先生紹介</a>
+                            <a href="#">クラブ・課外活動</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">学科・コース <span class="gnav-arrow">▼</span></a>
+                        <div class="dropdown">
+                            <a href="course.html">動物看護学科</a>
+                            <a href="#">動物トータルケア学科</a>
+                            <a href="#">野生動物・動物園学科</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">オープンキャンパス <span class="gnav-arrow">▼</span></a>
+                        <div class="dropdown">
+                            <a href="#">OC・イベント一覧</a>
+                            <a href="#">オンラインOC</a>
+                            <a href="#">学校見学・個別相談</a>
+                            <a href="#">進路相談会</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">資格・就職 <span class="gnav-arrow">▼</span></a>
+                        <div class="dropdown">
+                            <a href="#">めざせる資格</a>
+                            <a href="#">就職実績</a>
+                            <a href="#">卒業生メッセージ</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">入学案内 <span class="gnav-arrow">▼</span></a>
+                        <div class="dropdown">
+                            <a href="#">入試情報</a>
+                            <a href="#">AO入試</a>
+                            <a href="#">募集要項</a>
+                            <a href="#">学費・奨学金</a>
+                            <a href="contact.html">エントリーフォーム</a>
+                        </div>
+                    </li>
+                    <li><a href="#">アクセス</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="side-btns">
+        <a href="#" class="side-btn side-oc">オープンキャンパス申込</a>
+        <a href="#" class="side-btn side-doc">資料請求</a>
+        <a href="#" class="side-btn side-line">公式LINE</a>
+    </div>
+
+    <!-- ページヒーロー -->
+    <div class="page-hero">
+        <div class="page-hero-img">
+            <img src="image/nursing.jpg" alt="動物看護学科">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-text">
+            <span class="page-hero-en">VETERINARY NURSE COURSE</span>
+            <div class="page-hero-badge">3年制</div>
+            <div class="page-hero-ja">動物看護学科</div>
+        </div>
+    </div>
+
+    <!-- パンくず -->
+    <nav class="breadcrumb">
+        <a href="index.html">TOP</a>
+        <span>›</span>
+        <a href="#">学科・コース</a>
+        <span>›</span> 動物看護学科
+    </nav>
+
+    <!-- 学科概要 -->
+    <section class="section">
+        <div class="container">
+            <div class="overview-inner">
+                <div class="overview-img reveal">
+                    <img src="image/nursing.jpg" alt="動物看護学科">
+                </div>
+                <div class="overview-text reveal">
+                    <div class="sec-en" style="margin-bottom:0.5rem;">ABOUT THIS COURSE</div>
+                    <div class="sec-title" style="margin-bottom:1.5rem;">学科概要</div>
+                    <p class="overview-lead">
+                        動物と飼い主を支える<br>
+                        <span class="c-pink">愛玩動物看護師</span>をめざす
+                    </p>
+                    <p class="overview-body">
+                        愛玩動物看護師は、動物病院でのケアや処置補助を行う国家資格者。ANIMEAの動物看護学科では、3年間かけて確かな医療知識と実践スキルを習得します。<br><br> 1年次から実際の動物を使った実習を行い、卒業時には国家試験受験資格を取得。関東地区2年連続・国試合格率100%の実績がその質を証明しています。
+                    </p>
+                    <div class="overview-tags">
+                        <span class="overview-tag">🏥 国家資格取得</span>
+                        <span class="overview-tag">🐾 動物実習</span>
+                        <span class="overview-tag">💉 医療知識</span>
+                        <span class="overview-tag">❤️ 飼い主対応</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学びのステップ -->
+    <section class="steps-section">
+        <div class="container">
+            <div class="sec-head reveal" style="border-bottom:none;">
+                <div class="sec-head-left">
+                    <div class="sec-en">LEARNING STEPS</div>
+                    <div class="sec-title">3年間の学び</div>
+                </div>
+            </div>
+            <div class="steps-grid">
+
+                <div class="step-card reveal d1">
+                    <div class="step-card-head">
+                        <div class="step-num">01</div>
+                        <div class="step-year">1年次</div>
+                    </div>
+                    <div class="step-card-body">
+                        <p style="font-size:0.85rem; color:var(--text-mid); margin-bottom:1rem;">基礎をしっかり身につける</p>
+                        <ul class="step-subject-list">
+                            <li>動物の解剖・生理学</li>
+                            <li>動物行動学</li>
+                            <li>基礎動物看護学</li>
+                            <li>動物実習（基礎）</li>
+                            <li>コミュニケーション論</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-card reveal d2">
+                    <div class="step-card-head" style="background: linear-gradient(135deg, #FF9F5B, #FF7A3D);">
+                        <div class="step-num">02</div>
+                        <div class="step-year">2年次</div>
+                    </div>
+                    <div class="step-card-body">
+                        <p style="font-size:0.85rem; color:var(--text-mid); margin-bottom:1rem;">応用・専門知識を深める</p>
+                        <ul class="step-subject-list">
+                            <li>動物臨床看護学</li>
+                            <li>動物薬理学</li>
+                            <li>画像診断補助</li>
+                            <li>動物実習（応用）</li>
+                            <li>病院インターンシップ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-card reveal d3">
+                    <div class="step-card-head" style="background: linear-gradient(135deg, #FFB347, #FF8C00);">
+                        <div class="step-num">03</div>
+                        <div class="step-year">3年次</div>
+                    </div>
+                    <div class="step-card-body">
+                        <p style="font-size:0.85rem; color:var(--text-mid); margin-bottom:1rem;">国試対策と就職準備</p>
+                        <ul class="step-subject-list">
+                            <li>総合実習（提携病院）</li>
+                            <li>国家試験対策</li>
+                            <li>チーム医療演習</li>
+                            <li>就職活動支援</li>
+                            <li>卒業研究発表</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 先輩の声 -->
+    <section class="section">
+        <div class="container">
+            <div class="sec-head reveal" style="border-bottom:none;">
+                <div class="sec-head-left">
+                    <div class="sec-en">STUDENT VOICE</div>
+                    <div class="sec-title">先輩の声</div>
+                </div>
+            </div>
+            <div class="voice-grid">
+
+                <div class="voice-card reveal d1">
+                    <div class="voice-avatar">
+                        <img src="image/teacher.jpg" alt="">
+                    </div>
+                    <div class="voice-body">
+                        <p class="voice-quote">実習で初めてワンちゃんのバイタルを計測したとき、その温もりと責任感に圧倒されました。授業で習ったことが現場で活かせる瞬間がとても好きです。</p>
+                        <div class="voice-name"><strong>A.Kさん</strong>動物看護学科 2年次 / 埼玉県出身</div>
+                    </div>
+                </div>
+
+                <div class="voice-card reveal d2">
+                    <div class="voice-avatar">
+                        <img src="image/teacher.jpg" alt="">
+                    </div>
+                    <div class="voice-body">
+                        <p class="voice-quote">先生方がとても丁寧で、わからないことはすぐ聞ける環境が整っています。クラスの仲間と一緒に国試対策をがんばっています！</p>
+                        <div class="voice-name"><strong>M.Tさん</strong>動物看護学科 3年次 / 神奈川県出身</div>
+                    </div>
+                </div>
+
+                <div class="voice-card reveal d3">
+                    <div class="voice-avatar">
+                        <img src="image/teacher.jpg" alt="">
+                    </div>
+                    <div class="voice-body">
+                        <p class="voice-quote">提携病院でのインターンシップが特に充実していました。卒業後はそのままお世話になった病院に就職できることになり、本当によかったです。</p>
+                        <div class="voice-name"><strong>Y.Sさん</strong>動物看護学科 卒業生 / 動物病院勤務</div>
+                    </div>
+                </div>
+
+                <div class="voice-card reveal d4">
+                    <div class="voice-avatar">
+                        <img src="image/teacher.jpg" alt="">
+                    </div>
+                    <div class="voice-body">
+                        <p class="voice-quote">社会人から再進学しました。年齢を気にしていましたが、クラスの雰囲気がとても温かく、毎日楽しく学んでいます。夢に向かって頑張れています。</p>
+                        <div class="voice-name"><strong>R.Nさん</strong>動物看護学科 1年次 / 社会人入学</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 入試・学費案内 -->
+    <section class="section" style="background: linear-gradient(to bottom, #ffffff00 0%, #FFF8F0 20%, #FFF8F0 80%, #ffffff00 100%);">
+        <div class="container">
+            <div class="sec-head reveal" style="border-bottom:none;">
+                <div class="sec-head-left">
+                    <div class="sec-en">ADMISSION & TUITION</div>
+                    <div class="sec-title">入試・学費案内</div>
+                </div>
+            </div>
+            <div class="admission-grid reveal">
+
+                <div class="admission-card">
+                    <div class="admission-card-title">🎓 入試情報</div>
+                    <table class="admission-table">
+                        <tr>
+                            <td>入試方式</td>
+                            <td>AO入試 / 推薦入試 / 一般入試</td>
+                        </tr>
+                        <tr>
+                            <td>出願資格</td>
+                            <td>高校卒業（見込み）または同等以上</td>
+                        </tr>
+                        <tr>
+                            <td>募集人員</td>
+                            <td>40名</td>
+                        </tr>
+                        <tr>
+                            <td>選考方法</td>
+                            <td>書類審査・面接・作文<br>（方式により異なる）</td>
+                        </tr>
+                        <tr>
+                            <td>出願期間</td>
+                            <td>2025年9月〜（AO入試は随時）</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="admission-card">
+                    <div class="admission-card-title">💰 学費（3年間）</div>
+                    <table class="admission-table">
+                        <tr>
+                            <td>入学金</td>
+                            <td>200,000円<br><small style="color:var(--text-lt);">※入学時1回のみ</small></td>
+                        </tr>
+                        <tr>
+                            <td>授業料</td>
+                            <td>700,000円 / 年</td>
+                        </tr>
+                        <tr>
+                            <td>実習費</td>
+                            <td>150,000円 / 年</td>
+                        </tr>
+                        <tr>
+                            <td>施設費</td>
+                            <td>100,000円 / 年</td>
+                        </tr>
+                        <tr>
+                            <td>3年総額</td>
+                            <td style="font-weight:800; color:var(--peach); font-size:1.1rem;">約2,950,000円</td>
+                        </tr>
+                    </table>
+                    <small style="color:var(--text-lt); font-size:0.8rem;">※奨学金・各種免除制度あり。詳細はお問い合わせください。</small>
+                </div>
+
+            </div>
+            <div style="text-align:center; margin-top:3rem;" class="reveal">
+                <a href="contact.html" class="btn-apply">🌸 資料請求・エントリーはこちら</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="ft-inner">
+            <div class="ft-top">
+                <div>
+                    <div class="ft-logo">
+                        <div class="ft-logo-name">ANIMEA</div>
+                    </div>
+                    <p class="ft-address">
+                        〒150-0000 東京都渋谷区南平台町1-1 ANIMEAビル<br> 渋谷駅 徒歩8分 / 代官山駅 徒歩5分<br> TEL: 03-1234-5678（平日9:00〜18:00）
+                    </p>
+                </div>
+                <div>
+                    <div class="ft-col-title">当校について</div>
+                    <ul class="ft-col-links">
+                        <li><a href="about.html">学校紹介</a></li>
+                        <li><a href="#">施設紹介</a></li>
+                        <li><a href="#">キャンパスライフ</a></li>
+                        <li><a href="#">先生紹介</a></li>
+                        <li><a href="#">アクセスマップ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="ft-col-title">学科・入学</div>
+                    <ul class="ft-col-links">
+                        <li><a href="course.html">動物看護学科</a></li>
+                        <li><a href="#">動物トータルケア学科</a></li>
+                        <li><a href="#">野生動物・動物園学科</a></li>
+                        <li><a href="#">入試情報・AO入試</a></li>
+                        <li><a href="#">学費・奨学金</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="ft-col-title">サポート</div>
+                    <ul class="ft-col-links">
+                        <li><a href="#">就職・資格実績</a></li>
+                        <li><a href="#">保護者様へ</a></li>
+                        <li><a href="#">在校生の方へ</a></li>
+                        <li><a href="#">卒業生の方へ</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ft-bottom">
+                <div class="ft-sns">
+                    <a href="#"><img src="image/instagram_logo.png" alt="公式Instagram"></a>
+                    <a href="#"><img src="image/line_logo_icon.png" alt="公式LINE"></a>
+                </div>
+                <div>© 2025 動物医療専門学校 ANIMEA All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
