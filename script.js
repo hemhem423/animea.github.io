@@ -165,20 +165,6 @@ sections.forEach((section) => activeObserver.observe(section));
 // });
 
 // ===================================================
-// ギャラリー：マウスホバーでアニメーション一時停止
-// ===================================================
-const galleryTrack = document.querySelector('.gallery-track');
-
-if (galleryTrack) {
-  galleryTrack.addEventListener('mouseenter', () => {
-    galleryTrack.style.animationPlayState = 'paused';
-  });
-  galleryTrack.addEventListener('mouseleave', () => {
-    galleryTrack.style.animationPlayState = 'running';
-  });
-}
-
-// ===================================================
 // ページトップへスクロール（フッターのリンク等で使用）
 // ===================================================
 document.querySelectorAll('[data-scroll-top]').forEach((btn) => {
